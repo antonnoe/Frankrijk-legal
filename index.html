@@ -1,150 +1,126 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Frankrijk-Legal | Juridische Wegwijzer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frankrijk-Legal</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
 
-  <style>
-    :root {
-      --maroon:#800000;
-      --soft-yellow:#fff9e6;
-    }
-    body {
-      font-family: Mulish, sans-serif;
-      line-height:1.8em;
-      color:#333;
-    }
-    h1,h2,h3,h4 {
-      font-family:Poppins,sans-serif;
-      color:var(--maroon);
-    }
-    .bg-maroon { background-color:var(--maroon); }
-    .text-maroon { color:var(--maroon); }
-    .bg-soft { background-color:var(--soft-yellow); }
-    .btn {
-      background:var(--maroon);
-      color:#fff;
-      padding:.6rem 1.4rem;
-      border-radius:4px;
-      font-weight:600;
-    }
-  </style>
+<style>
+:root{--maroon:#800000;--soft:#fff9e6}
+body{font-family:Mulish,sans-serif;line-height:1.8em;color:#333}
+h1,h2,h3{font-family:Poppins,sans-serif;color:var(--maroon)}
+.badge{background:var(--soft);color:#5a0000;font-size:11px;padding:2px 8px;border-radius:999px;font-weight:600}
+</style>
 </head>
 
-<body class="bg-white">
+<body>
 
-<header class="bg-maroon text-white py-20 px-6 text-center">
-  <h1 class="text-white text-4xl md:text-6xl mb-6">Frankrijk-Legal</h1>
-  <p class="max-w-3xl mx-auto text-xl opacity-90">
-    Juridische transparantie over veelgebruikte diensten en instellingen in Frankrijk.
-  </p>
+<header class="bg-[var(--maroon)] text-white py-20 text-center">
+<h1 class="text-white text-5xl mb-4">Frankrijk-Legal</h1>
+<p class="opacity-90">Juridische transparantie per dienstverlener</p>
 </header>
 
 <main class="max-w-6xl mx-auto px-6 py-16">
 
-  <section class="mb-14">
-    <h2 class="text-3xl mb-4">Diensten & instellingen</h2>
-    <p class="text-gray-600 mb-8">
-      Neutraal overzicht van juridische documenten per organisatie.
-    </p>
+<input id="search" class="w-full md:w-96 p-4 border-2 rounded-xl mb-10"
+placeholder="Zoek op naam, sector of kader…">
 
-    <input id="search"
-      type="text"
-      placeholder="Zoek op naam, sector of omschrijving…"
-      class="w-full md:w-96 p-4 border-2 border-gray-200 rounded-xl focus:border-red-800 outline-none mb-10">
-  </section>
-
-  <section>
-    <div id="grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-
-    <div id="empty" class="hidden text-center py-20 text-gray-400 italic">
-      Geen resultaten gevonden.
-    </div>
-  </section>
+<div id="grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+<div id="empty" class="hidden text-center py-20 text-gray-400">Geen resultaten</div>
 
 </main>
 
-<footer class="bg-gray-900 text-white py-16 text-center mt-20">
-  <p class="opacity-70">Frankrijk-Legal © 2025 — feitelijk, neutraal, controleerbaar</p>
+<footer class="bg-gray-900 text-white py-12 text-center opacity-70">
+Frankrijk-Legal © 2025
 </footer>
 
 <script>
-/* =========================
-   DATA (voorbereid op B/A)
-========================= */
+/* ========= JURIDISCH KADER (A) ========= */
+const sectorFrameworks = {
+  "Algemeen":["RGPD","Mentions légales","Conditions"],
+  "Financieel":["RGPD","ACPR","DSP2","LCB-FT"],
+  "Verzekering":["RGPD","ACPR","Code des assurances"],
+  "Gezondheid":["RGPD","Code santé","HDS"],
+  "Telecom":["RGPD","ePrivacy","Cookies"],
+  "Overheid":["RGPD","Service-public"]
+};
+
+/* ========= DATA (B-READY) ========= */
 const companies = [
-  {
-    name:"Doctolib",
-    cat:"Gezondheid",
-    desc:"Medische afspraken & dossiers",
-    terms:"https://www.doctolib.fr/terms/conditions",
-    privacy:"https://www.doctolib.fr/terms/privacy"
-  },
-  {
-    name:"SNCF Connect",
-    cat:"Transport",
-    desc:"Treinreizen & mobiliteit",
-    terms:"https://www.sncf-connect.com/cgv",
-    privacy:"https://www.sncf-connect.com/donnees-personnelles"
-  },
-  {
-    name:"BoursoBank",
-    cat:"Financieel",
-    desc:"Online bankieren",
-    terms:"https://www.boursorama.com/reglementation",
-    privacy:"https://www.boursorama.com/donnees-personnelles"
-  },
-  {
-    name:"Orange",
-    cat:"Telecom",
-    desc:"Internet & mobiel",
-    terms:"https://boutique.orange.fr/informations/conditions-generales/",
-    privacy:"https://protection-donnees-personnelles.orange.fr/"
-  },
-  {
-    name:"Ameli",
-    cat:"Overheid",
-    desc:"Zorgverzekering (CPAM)",
-    terms:"https://www.ameli.fr/assure/mentions-legales",
-    privacy:"https://www.ameli.fr/assure/protection-donnees-personnelles"
-  }
+{
+ name:"Doctolib",
+ sector:"Gezondheid",
+ desc:"Medische afspraken & dossiers",
+ terms:"https://www.doctolib.fr/terms/conditions",
+ privacy:"https://www.doctolib.fr/terms/privacy"
+},
+{
+ name:"SNCF Connect",
+ sector:"Transport",
+ desc:"Treinreizen & mobiliteit",
+ terms:"https://www.sncf-connect.com/cgv",
+ privacy:"https://www.sncf-connect.com/donnees-personnelles"
+},
+{
+ name:"BoursoBank",
+ sector:"Financieel",
+ desc:"Online bankieren",
+ terms:"https://www.boursorama.com/reglementation",
+ privacy:"https://www.boursorama.com/donnees-personnelles"
+},
+{
+ name:"Orange",
+ sector:"Telecom",
+ desc:"Internet & mobiel",
+ terms:"https://boutique.orange.fr/informations/conditions-generales/",
+ privacy:"https://protection-donnees-personnelles.orange.fr/"
+},
+{
+ name:"Ameli",
+ sector:"Overheid",
+ desc:"Zorgverzekering (CPAM)",
+ terms:"https://www.ameli.fr/assure/mentions-legales",
+ privacy:"https://www.ameli.fr/assure/protection-donnees-personnelles"
+}
 ];
 
-/* =========================
-   RENDER & SEARCH
-========================= */
-const grid = document.getElementById("grid");
-const search = document.getElementById("search");
-const empty = document.getElementById("empty");
+/* ========= RENDER ========= */
+const grid=document.getElementById("grid");
+const empty=document.getElementById("empty");
+const search=document.getElementById("search");
 
-function render(term="") {
-  const t = term.toLowerCase();
-  const filtered = companies.filter(c =>
-    c.name.toLowerCase().includes(t) ||
-    c.cat.toLowerCase().includes(t) ||
-    c.desc.toLowerCase().includes(t)
-  );
+function render(q=""){
+q=q.toLowerCase();
+const res=companies.filter(c=>
+ c.name.toLowerCase().includes(q)||
+ c.sector.toLowerCase().includes(q)||
+ c.desc.toLowerCase().includes(q)||
+ (sectorFrameworks[c.sector]||[]).join(" ").toLowerCase().includes(q)
+);
 
-  grid.innerHTML = filtered.map(c => `
-    <div class="p-8 border-l-4 border-maroon bg-white shadow-sm hover:bg-soft transition">
-      <span class="text-xs uppercase tracking-wider text-gray-400 font-bold block mb-2">${c.cat}</span>
-      <h3 class="text-xl font-bold mb-2">${c.name}</h3>
-      <p class="text-sm text-gray-600 mb-4">${c.desc}</p>
-      <div class="flex flex-wrap gap-3 text-sm">
-        <a href="${c.terms}" target="_blank" class="text-maroon underline">Voorwaarden</a>
-        <a href="${c.privacy}" target="_blank" class="text-maroon underline">Privacy</a>
-      </div>
-    </div>
-  `).join("");
+grid.innerHTML=res.map(c=>{
+const fw=[...new Set([...(sectorFrameworks["Algemeen"]||[]),...(sectorFrameworks[c.sector]||[])])];
+return`
+<div class="p-8 border-l-4 border-[var(--maroon)] shadow-sm hover:bg-[var(--soft)] transition">
+<span class="text-xs uppercase text-gray-400 font-bold">${c.sector}</span>
+<h3 class="text-xl font-bold mt-2">${c.name}</h3>
+<p class="text-sm text-gray-600 mb-4">${c.desc}</p>
+<div class="flex flex-wrap gap-2 mb-4">
+${fw.map(f=>`<span class="badge">${f}</span>`).join("")}
+</div>
+<div class="flex gap-4 text-sm">
+<a href="${c.terms}" target="_blank" class="underline text-[var(--maroon)]">Voorwaarden</a>
+<a href="${c.privacy}" target="_blank" class="underline text-[var(--maroon)]">Privacy</a>
+</div>
+</div>`}).join("");
 
-  empty.classList.toggle("hidden", filtered.length > 0);
+empty.classList.toggle("hidden",res.length>0);
 }
 
-search.addEventListener("input", e => render(e.target.value));
+search.oninput=e=>render(e.target.value);
 render();
 </script>
 
