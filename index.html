@@ -13,7 +13,7 @@
         }
         body {
             font-family: 'Mulish', sans-serif;
-            line-height: 1.8em; /* Ruime regelafstand voor rust */
+            line-height: 1.8em;
             color: #333;
         }
         h1, h2, h3, h4 {
@@ -25,133 +25,158 @@
         .border-maroon { border-color: var(--maroon); }
         .bg-soft-yellow { background-color: var(--soft-yellow); }
         
-        /* Custom button style */
         .btn-maroon {
             background-color: var(--maroon);
             color: white;
-            padding: 0.5rem 1.2rem;
+            padding: 0.6rem 1.4rem;
             border-radius: 4px;
             font-weight: bold;
-            transition: opacity 0.2s;
+            display: inline-block;
+            transition: all 0.2s;
         }
-        .btn-maroon:hover { opacity: 0.9; }
+        .btn-maroon:hover { opacity: 0.9; transform: translateY(-1px); }
     </style>
 </head>
 <body class="bg-white">
 
-    <header class="bg-maroon text-white py-16 px-6 text-center">
-        <h1 class="text-white text-4xl md:text-5xl mb-4">Franse Digitale Wegwijzer</h1>
-        <p class="max-w-2xl mx-auto text-lg opacity-90">
-            Juridische bronnen en essentiële diensten voor Nederlanders in Frankrijk.
+    <header class="bg-maroon text-white py-20 px-6 text-center">
+        <h1 class="text-white text-4xl md:text-6xl mb-6">Franse Digitale Wegwijzer</h1>
+        <p class="max-w-3xl mx-auto text-xl opacity-90 font-light">
+            De centrale gids voor juridische transparantie en essentiële diensten voor de Nederlandse gemeenschap in Frankrijk.
         </p>
     </header>
 
-    <main class="max-w-5xl mx-auto px-6 py-12">
+    <main class="max-w-6xl mx-auto px-6 py-16">
         
-        <section class="mb-16">
-            <h2 class="text-3xl mb-8 border-b-2 border-yellow-100 pb-2">Vertrouwde Communities</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="p-8 border border-gray-100 rounded-xl shadow-sm bg-white">
-                    <h3 class="text-xl mb-3">Infofrankrijk.com</h3>
-                    <p class="mb-6">Hét platform voor wonen en werken in Frankrijk.</p>
+        <section class="mb-20">
+            <h2 class="text-3xl mb-10 border-b-2 border-yellow-100 pb-2">Vertrouwde Communities</h2>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="p-10 border border-gray-100 rounded-2xl shadow-sm bg-white border-t-4 border-t-red-800">
+                    <h3 class="text-2xl mb-4">Infofrankrijk.com</h3>
+                    <p class="mb-8">Hét startpunt voor iedereen die plannen heeft in Frankrijk of er al woont.</p>
                     <div class="flex flex-wrap gap-4">
                         <a href="https://infofrankrijk.com/algemene-voorwaarden/" target="_blank" class="btn-maroon">Algemene Voorwaarden</a>
-                        <a href="https://infofrankrijk.com/privacyverklaring/" target="_blank" class="border border-maroon text-maroon px-4 py-2 rounded font-bold">Privacy Policy</a>
+                        <a href="https://infofrankrijk.com/privacyverklaring/" target="_blank" class="border-2 border-maroon text-maroon px-5 py-2 rounded font-bold hover:bg-red-50">Privacy Policy</a>
                     </div>
                 </div>
-                <div class="p-8 border border-gray-100 rounded-xl shadow-sm bg-white">
-                    <h3 class="text-xl mb-3">Nederlanders.fr</h3>
-                    <p class="mb-6">Interactieve community voor NL-taligen.</p>
+                <div class="p-10 border border-gray-100 rounded-2xl shadow-sm bg-white border-t-4 border-t-red-800">
+                    <h3 class="text-2xl mb-4">Nederlanders.fr</h3>
+                    <p class="mb-8">De grootste interactieve community voor Nederlandstaligen in Frankrijk.</p>
                     <div class="flex flex-wrap gap-4">
-                        <a href="http://www.communitiesabroad.com/formalities.html" target="_blank" class="btn-maroon">Algemene Voorwaarden</a>
-                        <a href="http://www.communitiesabroad.com/formalities.html" target="_blank" class="border border-maroon text-maroon px-4 py-2 rounded font-bold">Privacy Policy</a>
+                        <a href="http://www.communitiesabroad.com/formalities.html" target="_blank" class="btn-maroon">Voorwaarden</a>
+                        <a href="http://www.communitiesabroad.com/formalities.html" target="_blank" class="border-2 border-maroon text-maroon px-5 py-2 rounded font-bold hover:bg-red-50">Privacy</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="bg-soft-yellow p-8 md:p-12 rounded-3xl mb-16">
-            <h2 class="text-3xl mb-6">Wonen & Bouwen: De Décennale</h2>
-            <div class="grid md:grid-cols-2 gap-12">
-                <div>
-                    <h4 class="font-bold mb-2 italic">Wat is de Assurance Décennale?</h4>
-                    <p>Een verplichte 10-jarige verzekering voor aannemers. Het dekt schade die de stabiliteit van het gebouw in gevaar brengt.</p>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-2 italic">Essentiële Check</h4>
-                    <ul class="list-disc ml-5">
-                        <li>Vraag het bewijs vóór de start van de werken.</li>
-                        <li>De garantie loopt 10 jaar na de 'réception'.</li>
-                        <li>Een 'Dommage-Ouvrage' versnelt schadeafhandeling.</li>
-                    </ul>
+        <section class="bg-soft-yellow p-10 md:p-16 rounded-[2rem] mb-20 shadow-inner">
+            <div class="max-w-4xl">
+                <h2 class="text-3xl mb-8 font-bold">Wonen & Bouwen: De Assurance Décennale</h2>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="space-y-4">
+                        <p class="font-bold text-xl italic text-red-900">Wat u moet weten</p>
+                        <p>De <em>Assurance Décennale</em> is een wettelijk verplichte verzekering voor bouwers in Frankrijk. Deze dekt ernstige gebreken aan de constructie die de stabiliteit van het pand aantasten.</p>
+                        <p>De dekking loopt exact 10 jaar, gerekend vanaf de dag na de officiële oplevering (<em>la réception</em>).</p>
+                    </div>
+                    <div class="bg-white/50 p-8 rounded-xl border border-maroon/10">
+                        <p class="font-bold text-maroon mb-4 uppercase tracking-wider">Uw Checklist:</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start"><span class="mr-2">✅</span> Vraag de <em>Attestation</em> op vóór de eerste steen wordt gelegd.</li>
+                            <li class="flex items-start"><span class="mr-2">✅</span> Controleer of de regio en het type werk correct zijn vermeld.</li>
+                            <li class="flex items-start"><span class="mr-2">✅</span> Sluit zelf een <em>Dommage-Ouvrage</em> af voor directe schadevergoeding.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section>
-            <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
-                <h2 class="text-3xl border-b-2 border-yellow-100 pb-2">Diensten doorzoeken</h2>
-                <div class="relative">
-                    <input type="text" id="searchInput" placeholder="Zoek op naam of categorie..." 
-                        class="w-full md:w-80 p-3 pl-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-800 outline-none">
-                    <span class="absolute left-3 top-3.5 opacity-30">🔍</span>
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div class="max-w-xl">
+                    <h2 class="text-3xl mb-4">Diensten & Compliance</h2>
+                    <p class="text-gray-600">Doorzoek de juridische status en categorieën van grote dienstverleners in Frankrijk.</p>
+                </div>
+                <div class="relative w-full md:w-96">
+                    <input type="text" id="searchInput" placeholder="Zoek op naam, bijv. 'SNCF' of 'Bank'..." 
+                        class="w-full p-4 pl-12 border-2 border-gray-200 rounded-xl focus:border-red-800 outline-none transition-all shadow-sm">
+                    <span class="absolute left-4 top-4.5 text-xl opacity-40">🔍</span>
                 </div>
             </div>
 
-            <div id="companyGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div id="companyGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 </div>
-            <div id="noResults" class="hidden text-center py-12 text-gray-500 italic">
-                Geen diensten gevonden voor deze zoekopdracht.
+            <div id="noResults" class="hidden text-center py-20 text-gray-400 text-xl italic bg-gray-50 rounded-xl">
+                Geen resultaten gevonden voor uw zoekopdracht.
             </div>
         </section>
 
     </main>
 
-    <footer class="bg-gray-50 py-12 px-6 text-center text-sm text-gray-500 mt-12">
-        <p>&copy; 2025 - Franse Digitale Wegwijzer.</p>
+    <footer class="bg-gray-900 text-white py-16 px-6 text-center mt-20">
+        <div class="max-w-4xl mx-auto opacity-70">
+            <p class="mb-4 font-poppins">Franse Digitale Wegwijzer &copy; 2025</p>
+            <p class="text-sm">Informatie over communities en juridische aspecten is gebaseerd op de richtlijnen van Communities Abroad en Franse bouwregelgeving.</p>
+        </div>
     </footer>
 
     <script>
-        // Data uit jouw JSON-lijst
         const companies = [
-            { name: "Doctolib", category: "Gezondheid", type: "Privacy & Afspraken" },
-            { name: "SNCF Connect", category: "Transport", type: "Treinreizen" },
-            { name: "BoursoBank", category: "Bankzaken", type: "Online Banking" },
-            { name: "BlaBlaCar", category: "Transport", type: "Carpoolen" },
-            { name: "Vinted", category: "Retail", type: "Tweedehands" },
-            { name: "Decathlon", category: "Sport", type: "Outdoor & Kleding" },
-            { name: "Amazon", category: "Retail", type: "E-commerce" },
-            { name: "Uber", category: "Transport", type: "Taxi & Rideshare" },
-            { name: "Air France", category: "Transport", type: "Luchtvaart" },
-            { name: "Transavia", category: "Transport", type: "Luchtvaart" }
+            { name: "Doctolib", cat: "Gezondheid", desc: "Medische afspraken & Dossiers" },
+            { name: "SNCF Connect", cat: "Transport", desc: "Treinreizen & Mobiliteit" },
+            { name: "BoursoBank", cat: "Financieel", desc: "Online Bankieren (Boursorama)" },
+            { name: "BlaBlaCar", cat: "Transport", desc: "Carpoolen & Busreizen" },
+            { name: "Vinted", cat: "Retail", desc: "Tweedehands Mode" },
+            { name: "Decathlon", cat: "Retail", desc: "Sportartikelen & Outdoor" },
+            { name: "Amazon.fr", cat: "Retail", desc: "E-commerce & Logistiek" },
+            { name: "Uber", cat: "Transport", desc: "Taxi & Maaltijden" },
+            { name: "Air France", cat: "Transport", desc: "Luchtvaart" },
+            { name: "Transavia", cat: "Transport", desc: "Luchtvaart" },
+            { name: "Free Mobile", cat: "Telecom", desc: "Mobiele Telefonie & Internet" },
+            { name: "Orange", cat: "Telecom", desc: "Internet & Mobiel" },
+            { name: "Zalando", cat: "Retail", desc: "Mode & Schoenen" },
+            { name: "Netflix", cat: "Media", desc: "Streamingdiensten" },
+            { name: "Disney+", cat: "Media", desc: "Streamingdiensten" },
+            { name: "Spotify", cat: "Media", desc: "Muziekstreaming" },
+            { name: "Ryanair", cat: "Transport", desc: "Luchtvaart" },
+            { name: "FlixBus", cat: "Transport", desc: "Busreizen Europa" },
+            { name: "Leclerc", cat: "Retail", desc: "Supermarkten & Brandstof" },
+            { name: "Carrefour", cat: "Retail", desc: "Supermarkten" },
+            { name: "H&M", cat: "Retail", desc: "Kleding" },
+            { name: "Zara", cat: "Retail", desc: "Mode" },
+            { name: "C&A", cat: "Retail", desc: "Kleding" },
+            { name: "Apple", cat: "Tech", desc: "Hardware & Diensten" },
+            { name: "Google", cat: "Tech", desc: "Zoekmachine & Data" },
+            { name: "WhatsApp", cat: "Communicatie", desc: "Berichtendiensten" },
+            { name: "TikTok", cat: "Social Media", desc: "Video Platform" },
+            { name: "Veepee", cat: "Retail", desc: "Flash-sales & Mode" },
+            { name: "Lacoste", cat: "Retail", desc: "Kleding & Sport" },
+            { name: "Levi's", cat: "Retail", desc: "Mode" }
         ];
 
-        const searchInput = document.getElementById('searchInput');
-        const companyGrid = document.getElementById('companyGrid');
-        const noResults = document.getElementById('noResults');
+        const grid = document.getElementById('companyGrid');
+        const search = document.getElementById('searchInput');
+        const none = document.getElementById('noResults');
 
-        function displayCompanies(filter = '') {
+        function render(term = '') {
             const filtered = companies.filter(c => 
-                c.name.toLowerCase().includes(filter.toLowerCase()) || 
-                c.category.toLowerCase().includes(filter.toLowerCase())
+                c.name.toLowerCase().includes(term.toLowerCase()) || 
+                c.cat.toLowerCase().includes(term.toLowerCase())
             );
 
-            companyGrid.innerHTML = filtered.map(c => `
-                <div class="p-6 border-l-4 border-maroon bg-gray-50 flex flex-col justify-center hover:bg-yellow-50 transition-colors">
-                    <p class="text-xs uppercase tracking-widest text-gray-500 mb-1">${c.category}</p>
-                    <h4 class="font-bold text-lg">${c.name}</h4>
-                    <p class="text-sm opacity-70">${c.type}</p>
+            grid.innerHTML = filtered.map(c => `
+                <div class="group p-8 border-l-4 border-maroon bg-white shadow-sm hover:shadow-md hover:bg-soft-yellow transition-all duration-300">
+                    <span class="text-[10px] uppercase tracking-[0.2em] text-gray-400 font-bold block mb-2">${c.cat}</span>
+                    <h4 class="text-xl font-bold mb-2 group-hover:text-red-900 transition-colors">${c.name}</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed">${c.desc}</p>
                 </div>
             `).join('');
 
-            noResults.classList.toggle('hidden', filtered.length > 0);
+            none.classList.toggle('hidden', filtered.length > 0);
         }
 
-        searchInput.addEventListener('input', (e) => displayCompanies(e.target.value));
-        
-        // Initial render
-        displayCompanies();
+        search.addEventListener('input', (e) => render(e.target.value));
+        render(); // Start
     </script>
-
 </body>
 </html>
