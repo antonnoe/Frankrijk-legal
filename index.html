@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Franse Digitale Wegwijzer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --maroon: #800000;
+        }
+        body {
+            font-family: 'Mulish', sans-serif;
+            line-height: 1.8em; /* Ruime regelafstand conform instructie */
+            color: #333;
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--maroon);
+        }
+        .bg-maroon { background-color: var(--maroon); }
+        .text-maroon { color: var(--maroon); }
+        .border-maroon { border-color: var(--maroon); }
+    </style>
+</head>
+<body class="bg-white">
+
+    <header class="bg-maroon text-white py-16 px-6 text-center">
+        <h1 class="text-4xl md:text-5xl mb-4">Franse Digitale Wegwijzer</h1>
+        <p class="max-w-2xl mx-auto text-lg opacity-90">
+            Juridische bronnen en essentiële diensten voor Nederlanders in Frankrijk.
+        </p>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <section class="mb-16">
+            <h2 class="text-3xl mb-8 border-b-2 border-yellow-100 pb-2">Vertrouwde Communities</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="p-8 border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <h3 class="text-xl mb-3">Infofrankrijk.com</h3>
+                    <p class="mb-6">Hét platform voor wonen en werken in Frankrijk.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://infofrankrijk.com/algemene-voorwaarden/" target="_blank" class="bg-maroon text-white px-4 py-2 rounded text-sm font-bold">Algemene Voorwaarden</a>
+                        <a href="https://infofrankrijk.com/privacyverklaring/" target="_blank" class="border border-maroon text-maroon px-4 py-2 rounded text-sm font-bold">Privacy Policy</a>
+                    </div>
+                </div>
+                <div class="p-8 border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <h3 class="text-xl mb-3">Nederlanders.fr</h3>
+                    <p class="mb-6">Interactieve community voor NL-taligen in Frankrijk.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="http://www.communitiesabroad.com/formalities.html" target="_blank" class="bg-maroon text-white px-4 py-2 rounded text-sm font-bold">Algemene Voorwaarden</a>
+                        <a href="http://www.communitiesabroad.com/formalities.html" target="_blank" class="border border-maroon text-maroon px-4 py-2 rounded text-sm font-bold">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-yellow-50 p-8 md:p-12 rounded-3xl mb-16">
+            <h2 class="text-3xl mb-6">Wonen & Bouwen: De Décennale</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h4 class="font-bold text-maroon mb-2 italic">Wat is de Assurance Décennale?</h4>
+                    <p>Dit is een verplichte 10-jarige verzekering voor bouwers. Het dekt schade die de stabiliteit van het gebouw in gevaar brengt of het onbewoonbaar maakt.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-maroon mb-2 italic">Belangrijke Checks</h4>
+                    <ul class="list-disc ml-5">
+                        <li>Vraag het verzekeringsbewijs vóór de start van de werken.</li>
+                        <li>De garantie loopt precies 10 jaar na de officiële oplevering.</li>
+                        <li>Overweeg een 'Dommage-Ouvrage' voor snellere schadeafhandeling.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-3xl mb-8 border-b-2 border-yellow-100 pb-2">Essentiële Franse Diensten</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="p-6 border-l-4 border-maroon bg-gray-50 flex justify-between items-center">
+                    <div>
+                        <p class="text-xs uppercase text-gray-500">Gezondheid</p>
+                        <h4 class="font-bold text-lg">Doctolib</h4>
+                    </div>
+                </div>
+                <div class="p-6 border-l-4 border-maroon bg-gray-50 flex justify-between items-center">
+                    <div>
+                        <p class="text-xs uppercase text-gray-500">Transport</p>
+                        <h4 class="font-bold text-lg">SNCF Connect</h4>
+                    </div>
+                </div>
+                <div class="p-6 border-l-4 border-maroon bg-gray-50 flex justify-between items-center">
+                    <div>
+                        <p class="text-xs uppercase text-gray-500">Bankzaken</p>
+                        <h4 class="font-bold text-lg">BoursoBank</h4>
+                    </div>
+                </div>
+                <div class="p-6 border-l-4 border-maroon bg-gray-50 flex justify-between items-center">
+                    <div>
+                        <p class="text-xs uppercase text-gray-500">Transport</p>
+                        <h4 class="font-bold text-lg">BlaBlaCar</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-50 py-12 px-6 text-center text-sm text-gray-500 mt-12">
+        <p>&copy; 2025 - Franse Digitale Wegwijzer. Gerealiseerd voor de NL-community in Frankrijk.</p>
+    </footer>
+
+</body>
+</html>
