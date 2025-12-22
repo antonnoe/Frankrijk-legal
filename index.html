@@ -1,182 +1,152 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Franse Digitale Wegwijzer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        :root {
-            --maroon: #800000;
-            --soft-yellow: #fff9e6;
-        }
-        body {
-            font-family: 'Mulish', sans-serif;
-            line-height: 1.8em;
-            color: #333;
-        }
-        h1, h2, h3, h4 {
-            font-family: 'Poppins', sans-serif;
-            color: var(--maroon);
-        }
-        .bg-maroon { background-color: var(--maroon); }
-        .text-maroon { color: var(--maroon); }
-        .border-maroon { border-color: var(--maroon); }
-        .bg-soft-yellow { background-color: var(--soft-yellow); }
-        
-        .btn-maroon {
-            background-color: var(--maroon);
-            color: white;
-            padding: 0.6rem 1.4rem;
-            border-radius: 4px;
-            font-weight: bold;
-            display: inline-block;
-            transition: all 0.2s;
-        }
-        .btn-maroon:hover { opacity: 0.9; transform: translateY(-1px); }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frankrijk-Legal | Juridische Wegwijzer</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --maroon:#800000;
+      --soft-yellow:#fff9e6;
+    }
+    body {
+      font-family: Mulish, sans-serif;
+      line-height:1.8em;
+      color:#333;
+    }
+    h1,h2,h3,h4 {
+      font-family:Poppins,sans-serif;
+      color:var(--maroon);
+    }
+    .bg-maroon { background-color:var(--maroon); }
+    .text-maroon { color:var(--maroon); }
+    .bg-soft { background-color:var(--soft-yellow); }
+    .btn {
+      background:var(--maroon);
+      color:#fff;
+      padding:.6rem 1.4rem;
+      border-radius:4px;
+      font-weight:600;
+    }
+  </style>
 </head>
+
 <body class="bg-white">
 
-    <header class="bg-maroon text-white py-20 px-6 text-center">
-        <h1 class="text-white text-4xl md:text-6xl mb-6">Franse Digitale Wegwijzer</h1>
-        <p class="max-w-3xl mx-auto text-xl opacity-90 font-light">
-            De centrale gids voor juridische transparantie en essentiële diensten voor de Nederlandse gemeenschap in Frankrijk.
-        </p>
-    </header>
+<header class="bg-maroon text-white py-20 px-6 text-center">
+  <h1 class="text-white text-4xl md:text-6xl mb-6">Frankrijk-Legal</h1>
+  <p class="max-w-3xl mx-auto text-xl opacity-90">
+    Juridische transparantie over veelgebruikte diensten en instellingen in Frankrijk.
+  </p>
+</header>
 
-    <main class="max-w-6xl mx-auto px-6 py-16">
-        
-        <section class="mb-20">
-            <h2 class="text-3xl mb-10 border-b-2 border-yellow-100 pb-2">Vertrouwde Communities</h2>
-            <div class="grid md:grid-cols-2 gap-10">
-                <div class="p-10 border border-gray-100 rounded-2xl shadow-sm bg-white border-t-4 border-t-red-800">
-                    <h3 class="text-2xl mb-4">Infofrankrijk.com</h3>
-                    <p class="mb-8">Hét startpunt voor iedereen die plannen heeft in Frankrijk of er al woont.</p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="https://infofrankrijk.com/algemene-voorwaarden/" target="_blank" class="btn-maroon">Algemene Voorwaarden</a>
-                        <a href="https://infofrankrijk.com/privacyverklaring/" target="_blank" class="border-2 border-maroon text-maroon px-5 py-2 rounded font-bold hover:bg-red-50">Privacy Policy</a>
-                    </div>
-                </div>
-                <div class="p-10 border border-gray-100 rounded-2xl shadow-sm bg-white border-t-4 border-t-red-800">
-                    <h3 class="text-2xl mb-4">Nederlanders.fr</h3>
-                    <p class="mb-8">De grootste interactieve community voor Nederlandstaligen in Frankrijk.</p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="http://www.communitiesabroad.com/formalities.html" target="_blank" class="btn-maroon">Voorwaarden</a>
-                        <a href="http://www.communitiesabroad.com/formalities.html" target="_blank" class="border-2 border-maroon text-maroon px-5 py-2 rounded font-bold hover:bg-red-50">Privacy</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+<main class="max-w-6xl mx-auto px-6 py-16">
 
-        <section class="bg-soft-yellow p-10 md:p-16 rounded-[2rem] mb-20 shadow-inner">
-            <div class="max-w-4xl">
-                <h2 class="text-3xl mb-8 font-bold">Wonen & Bouwen: De Assurance Décennale</h2>
-                <div class="grid md:grid-cols-2 gap-12">
-                    <div class="space-y-4">
-                        <p class="font-bold text-xl italic text-red-900">Wat u moet weten</p>
-                        <p>De <em>Assurance Décennale</em> is een wettelijk verplichte verzekering voor bouwers in Frankrijk. Deze dekt ernstige gebreken aan de constructie die de stabiliteit van het pand aantasten.</p>
-                        <p>De dekking loopt exact 10 jaar, gerekend vanaf de dag na de officiële oplevering (<em>la réception</em>).</p>
-                    </div>
-                    <div class="bg-white/50 p-8 rounded-xl border border-maroon/10">
-                        <p class="font-bold text-maroon mb-4 uppercase tracking-wider">Uw Checklist:</p>
-                        <ul class="space-y-3">
-                            <li class="flex items-start"><span class="mr-2">✅</span> Vraag de <em>Attestation</em> op vóór de eerste steen wordt gelegd.</li>
-                            <li class="flex items-start"><span class="mr-2">✅</span> Controleer of de regio en het type werk correct zijn vermeld.</li>
-                            <li class="flex items-start"><span class="mr-2">✅</span> Sluit zelf een <em>Dommage-Ouvrage</em> af voor directe schadevergoeding.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <section class="mb-14">
+    <h2 class="text-3xl mb-4">Diensten & instellingen</h2>
+    <p class="text-gray-600 mb-8">
+      Neutraal overzicht van juridische documenten per organisatie.
+    </p>
 
-        <section>
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-                <div class="max-w-xl">
-                    <h2 class="text-3xl mb-4">Diensten & Compliance</h2>
-                    <p class="text-gray-600">Doorzoek de juridische status en categorieën van grote dienstverleners in Frankrijk.</p>
-                </div>
-                <div class="relative w-full md:w-96">
-                    <input type="text" id="searchInput" placeholder="Zoek op naam, bijv. 'SNCF' of 'Bank'..." 
-                        class="w-full p-4 pl-12 border-2 border-gray-200 rounded-xl focus:border-red-800 outline-none transition-all shadow-sm">
-                    <span class="absolute left-4 top-4.5 text-xl opacity-40">🔍</span>
-                </div>
-            </div>
+    <input id="search"
+      type="text"
+      placeholder="Zoek op naam, sector of omschrijving…"
+      class="w-full md:w-96 p-4 border-2 border-gray-200 rounded-xl focus:border-red-800 outline-none mb-10">
+  </section>
 
-            <div id="companyGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                </div>
-            <div id="noResults" class="hidden text-center py-20 text-gray-400 text-xl italic bg-gray-50 rounded-xl">
-                Geen resultaten gevonden voor uw zoekopdracht.
-            </div>
-        </section>
+  <section>
+    <div id="grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
 
-    </main>
+    <div id="empty" class="hidden text-center py-20 text-gray-400 italic">
+      Geen resultaten gevonden.
+    </div>
+  </section>
 
-    <footer class="bg-gray-900 text-white py-16 px-6 text-center mt-20">
-        <div class="max-w-4xl mx-auto opacity-70">
-            <p class="mb-4 font-poppins">Franse Digitale Wegwijzer &copy; 2025</p>
-            <p class="text-sm">Informatie over communities en juridische aspecten is gebaseerd op de richtlijnen van Communities Abroad en Franse bouwregelgeving.</p>
-        </div>
-    </footer>
+</main>
 
-    <script>
-        const companies = [
-            { name: "Doctolib", cat: "Gezondheid", desc: "Medische afspraken & Dossiers" },
-            { name: "SNCF Connect", cat: "Transport", desc: "Treinreizen & Mobiliteit" },
-            { name: "BoursoBank", cat: "Financieel", desc: "Online Bankieren (Boursorama)" },
-            { name: "BlaBlaCar", cat: "Transport", desc: "Carpoolen & Busreizen" },
-            { name: "Vinted", cat: "Retail", desc: "Tweedehands Mode" },
-            { name: "Decathlon", cat: "Retail", desc: "Sportartikelen & Outdoor" },
-            { name: "Amazon.fr", cat: "Retail", desc: "E-commerce & Logistiek" },
-            { name: "Uber", cat: "Transport", desc: "Taxi & Maaltijden" },
-            { name: "Air France", cat: "Transport", desc: "Luchtvaart" },
-            { name: "Transavia", cat: "Transport", desc: "Luchtvaart" },
-            { name: "Free Mobile", cat: "Telecom", desc: "Mobiele Telefonie & Internet" },
-            { name: "Orange", cat: "Telecom", desc: "Internet & Mobiel" },
-            { name: "Zalando", cat: "Retail", desc: "Mode & Schoenen" },
-            { name: "Netflix", cat: "Media", desc: "Streamingdiensten" },
-            { name: "Disney+", cat: "Media", desc: "Streamingdiensten" },
-            { name: "Spotify", cat: "Media", desc: "Muziekstreaming" },
-            { name: "Ryanair", cat: "Transport", desc: "Luchtvaart" },
-            { name: "FlixBus", cat: "Transport", desc: "Busreizen Europa" },
-            { name: "Leclerc", cat: "Retail", desc: "Supermarkten & Brandstof" },
-            { name: "Carrefour", cat: "Retail", desc: "Supermarkten" },
-            { name: "H&M", cat: "Retail", desc: "Kleding" },
-            { name: "Zara", cat: "Retail", desc: "Mode" },
-            { name: "C&A", cat: "Retail", desc: "Kleding" },
-            { name: "Apple", cat: "Tech", desc: "Hardware & Diensten" },
-            { name: "Google", cat: "Tech", desc: "Zoekmachine & Data" },
-            { name: "WhatsApp", cat: "Communicatie", desc: "Berichtendiensten" },
-            { name: "TikTok", cat: "Social Media", desc: "Video Platform" },
-            { name: "Veepee", cat: "Retail", desc: "Flash-sales & Mode" },
-            { name: "Lacoste", cat: "Retail", desc: "Kleding & Sport" },
-            { name: "Levi's", cat: "Retail", desc: "Mode" }
-        ];
+<footer class="bg-gray-900 text-white py-16 text-center mt-20">
+  <p class="opacity-70">Frankrijk-Legal © 2025 — feitelijk, neutraal, controleerbaar</p>
+</footer>
 
-        const grid = document.getElementById('companyGrid');
-        const search = document.getElementById('searchInput');
-        const none = document.getElementById('noResults');
+<script>
+/* =========================
+   DATA (voorbereid op B/A)
+========================= */
+const companies = [
+  {
+    name:"Doctolib",
+    cat:"Gezondheid",
+    desc:"Medische afspraken & dossiers",
+    terms:"https://www.doctolib.fr/terms/conditions",
+    privacy:"https://www.doctolib.fr/terms/privacy"
+  },
+  {
+    name:"SNCF Connect",
+    cat:"Transport",
+    desc:"Treinreizen & mobiliteit",
+    terms:"https://www.sncf-connect.com/cgv",
+    privacy:"https://www.sncf-connect.com/donnees-personnelles"
+  },
+  {
+    name:"BoursoBank",
+    cat:"Financieel",
+    desc:"Online bankieren",
+    terms:"https://www.boursorama.com/reglementation",
+    privacy:"https://www.boursorama.com/donnees-personnelles"
+  },
+  {
+    name:"Orange",
+    cat:"Telecom",
+    desc:"Internet & mobiel",
+    terms:"https://boutique.orange.fr/informations/conditions-generales/",
+    privacy:"https://protection-donnees-personnelles.orange.fr/"
+  },
+  {
+    name:"Ameli",
+    cat:"Overheid",
+    desc:"Zorgverzekering (CPAM)",
+    terms:"https://www.ameli.fr/assure/mentions-legales",
+    privacy:"https://www.ameli.fr/assure/protection-donnees-personnelles"
+  }
+];
 
-        function render(term = '') {
-            const filtered = companies.filter(c => 
-                c.name.toLowerCase().includes(term.toLowerCase()) || 
-                c.cat.toLowerCase().includes(term.toLowerCase())
-            );
+/* =========================
+   RENDER & SEARCH
+========================= */
+const grid = document.getElementById("grid");
+const search = document.getElementById("search");
+const empty = document.getElementById("empty");
 
-            grid.innerHTML = filtered.map(c => `
-                <div class="group p-8 border-l-4 border-maroon bg-white shadow-sm hover:shadow-md hover:bg-soft-yellow transition-all duration-300">
-                    <span class="text-[10px] uppercase tracking-[0.2em] text-gray-400 font-bold block mb-2">${c.cat}</span>
-                    <h4 class="text-xl font-bold mb-2 group-hover:text-red-900 transition-colors">${c.name}</h4>
-                    <p class="text-sm text-gray-600 leading-relaxed">${c.desc}</p>
-                </div>
-            `).join('');
+function render(term="") {
+  const t = term.toLowerCase();
+  const filtered = companies.filter(c =>
+    c.name.toLowerCase().includes(t) ||
+    c.cat.toLowerCase().includes(t) ||
+    c.desc.toLowerCase().includes(t)
+  );
 
-            none.classList.toggle('hidden', filtered.length > 0);
-        }
+  grid.innerHTML = filtered.map(c => `
+    <div class="p-8 border-l-4 border-maroon bg-white shadow-sm hover:bg-soft transition">
+      <span class="text-xs uppercase tracking-wider text-gray-400 font-bold block mb-2">${c.cat}</span>
+      <h3 class="text-xl font-bold mb-2">${c.name}</h3>
+      <p class="text-sm text-gray-600 mb-4">${c.desc}</p>
+      <div class="flex flex-wrap gap-3 text-sm">
+        <a href="${c.terms}" target="_blank" class="text-maroon underline">Voorwaarden</a>
+        <a href="${c.privacy}" target="_blank" class="text-maroon underline">Privacy</a>
+      </div>
+    </div>
+  `).join("");
 
-        search.addEventListener('input', (e) => render(e.target.value));
-        render(); // Start
-    </script>
+  empty.classList.toggle("hidden", filtered.length > 0);
+}
+
+search.addEventListener("input", e => render(e.target.value));
+render();
+</script>
+
 </body>
 </html>
