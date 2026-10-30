@@ -13,22 +13,36 @@
 body{font-family:Mulish,sans-serif;line-height:1.8em;color:#333}
 h1,h2,h3{font-family:Poppins,sans-serif;color:var(--maroon)}
 .badge{background:var(--soft);color:#5a0000;font-size:11px;padding:2px 8px;border-radius:999px;font-weight:600}
+.tegel{background:#fff;border:1px solid rgba(21,24,26,.10);border-left:4px solid var(--maroon);border-radius:16px;overflow:hidden}
+.tegel-kop{display:block;width:100%;text-align:left;background:none;border:0;padding:16px;cursor:pointer;font:inherit;color:inherit;position:relative}
+.tegel-kop:hover{background:var(--soft)}
+.tegel-kop:focus-visible{outline:3px solid var(--maroon);outline-offset:-3px}
+.tegel-kop .pijl{position:absolute;right:16px;top:16px;color:var(--maroon);font-weight:700;transition:transform .15s}
+.tegel-kop[aria-expanded="true"] .pijl{transform:rotate(90deg)}
+.tegel-paneel{padding:4px 16px 16px;border-top:1px solid rgba(21,24,26,.08)}
+.tegel-paneel h4{font:700 13px Poppins,sans-serif;color:#15181A;margin:12px 0 6px}
+.tegel-paneel dt{font-weight:700;font-size:13px;line-height:1.5;margin-top:8px;color:#5a0000}
+.tegel-paneel dd{font-size:14px;line-height:1.6;color:#3D4346;margin:0}
+.tegel-paneel .noot{font-size:12.5px;line-height:1.6;color:#71787C;margin-top:12px}
+.knoppen{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.knoppen a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;border-radius:12px;border:1.5px solid rgba(128,0,0,.35);background:#fff;color:var(--maroon);font:700 14px Mulish,sans-serif;text-decoration:none}
+@media (prefers-reduced-motion:reduce){.tegel-kop .pijl{transition:none}}
 </style>
 </head>
 
 <body>
 
-<header class="bg-[var(--maroon)] text-white py-20 text-center">
-<h1 class="text-white text-5xl mb-4">Frankrijk-Legal</h1>
+<header class="bg-[var(--maroon)] text-white py-10 md:py-20 text-center px-4">
+<h1 class="text-white text-4xl md:text-5xl mb-4">Frankrijk-Legal</h1>
 <p class="opacity-90">Juridische transparantie per dienstverlener</p>
 </header>
 
-<main class="max-w-6xl mx-auto px-6 py-16">
+<main class="max-w-6xl mx-auto px-4 md:px-6 py-8 md:py-16">
 
-<input id="search" class="w-full md:w-96 p-4 border-2 rounded-xl mb-10"
+<input id="search" class="w-full md:w-96 p-4 border-2 rounded-xl mb-6 md:mb-10" aria-label="Zoek op naam, sector of kader"
 placeholder="Zoek op naam, sector of kader…">
 
-<div id="grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+<div id="grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 items-start"></div>
 <div id="empty" class="hidden text-center py-20 text-gray-400">Geen resultaten</div>
 
 </main>
@@ -47,6 +61,25 @@ const sectorFrameworks = {
   "Telecom":["RGPD","ePrivacy","Cookies"],
   "Overheid":["RGPD","Service-public"]
 };
+
+/* ========= UITLEG VAN DE KADERS =========
+   Alleen wat de afkorting betekent; geen oordeel over de voorwaarden van een dienst. */
+const kaderUitleg = {
+  "RGPD":"Règlement général sur la protection des données: de Franse naam voor de AVG, de Europese privacywet.",
+  "Mentions légales":"De wettelijk verplichte vermeldingen op een Franse website, zoals wie de uitgever is en waar de site wordt gehost.",
+  "Conditions":"De algemene voorwaarden waarmee u akkoord gaat als u de dienst gebruikt.",
+  "Code santé":"Code de la santé publique: het Franse wetboek voor de volksgezondheid.",
+  "HDS":"Hébergeur de données de santé: een certificering voor partijen die gezondheidsgegevens bewaren.",
+  "ACPR":"Autorité de contrôle prudentiel et de résolution: het toezicht op banken en verzekeraars in Frankrijk.",
+  "DSP2":"De Franse naam voor PSD2, de Europese richtlijn voor betaaldiensten.",
+  "LCB-FT":"Lutte contre le blanchiment et le financement du terrorisme: regels tegen witwassen en terrorismefinanciering.",
+  "Code des assurances":"Het Franse wetboek voor verzekeringen.",
+  "ePrivacy":"De Europese regels voor privacy bij elektronische communicatie, waaronder cookies.",
+  "Cookies":"Regels over toestemming voor cookies en andere volgtechnieken.",
+  "Service-public":"Verwijst naar service-public.fr, het officiële informatieportaal van de Franse overheid."
+};
+const open = new Set();
+function esc(t){return String(t).replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));}
 
 /* ========= DATA (B-READY) ========= */
 const companies = [
@@ -101,25 +134,42 @@ const res=companies.filter(c=>
  (sectorFrameworks[c.sector]||[]).join(" ").toLowerCase().includes(q)
 );
 
-grid.innerHTML=res.map(c=>{
+grid.innerHTML=res.map((c,i)=>{
 const fw=[...new Set([...(sectorFrameworks["Algemeen"]||[]),...(sectorFrameworks[c.sector]||[])])];
+const aan=open.has(c.name);
+const id="paneel-"+c.name.toLowerCase().replace(/[^a-z0-9]+/g,"-");
 return`
-<div class="p-8 border-l-4 border-[var(--maroon)] shadow-sm hover:bg-[var(--soft)] transition">
-<span class="text-xs uppercase text-gray-400 font-bold">${c.sector}</span>
-<h3 class="text-xl font-bold mt-2">${c.name}</h3>
-<p class="text-sm text-gray-600 mb-4">${c.desc}</p>
-<div class="flex flex-wrap gap-2 mb-4">
-${fw.map(f=>`<span class="badge">${f}</span>`).join("")}
+<article class="tegel">
+<button type="button" class="tegel-kop" data-naam="${esc(c.name)}" aria-expanded="${aan}" aria-controls="${id}">
+<span class="pijl" aria-hidden="true">&#8250;</span>
+<span class="block text-xs uppercase text-gray-400 font-bold">${esc(c.sector)}</span>
+<span class="block text-xl font-bold mt-1 pr-6" style="font-family:Poppins,sans-serif">${esc(c.name)}</span>
+<span class="block text-sm text-gray-600 mb-3">${esc(c.desc)}</span>
+<span class="flex flex-wrap gap-2">${fw.map(f=>`<span class="badge">${esc(f)}</span>`).join("")}</span>
+</button>
+<div class="tegel-paneel" id="${id}"${aan?"":" hidden"}>
+<h4>Wat betekenen deze kaders?</h4>
+<dl>${fw.map(f=>`<dt>${esc(f)}</dt><dd>${esc(kaderUitleg[f]||"Geen uitleg beschikbaar.")}</dd>`).join("")}</dl>
+<p class="noot">Dit legt de afkortingen uit en geeft geen oordeel over de voorwaarden van ${esc(c.name)}. Lees die zelf via de knoppen hieronder, ze openen op de site van de dienst.</p>
+<div class="knoppen">
+<a href="${esc(c.terms)}" target="_blank" rel="noopener">Voorwaarden &#8599;</a>
+<a href="${esc(c.privacy)}" target="_blank" rel="noopener">Privacy &#8599;</a>
 </div>
-<div class="flex gap-4 text-sm">
-<a href="${c.terms}" target="_blank" class="underline text-[var(--maroon)]">Voorwaarden</a>
-<a href="${c.privacy}" target="_blank" class="underline text-[var(--maroon)]">Privacy</a>
 </div>
-</div>`}).join("");
+</article>`}).join("");
 
 empty.classList.toggle("hidden",res.length>0);
 }
 
+grid.addEventListener("click",e=>{
+ const kop=e.target.closest(".tegel-kop"); if(!kop) return;
+ const naam=kop.getAttribute("data-naam");
+ const aan=kop.getAttribute("aria-expanded")!=="true";
+ if(aan) open.add(naam); else open.delete(naam);
+ kop.setAttribute("aria-expanded",String(aan));
+ const paneel=document.getElementById(kop.getAttribute("aria-controls"));
+ if(paneel) paneel.hidden=!aan;
+});
 search.oninput=e=>render(e.target.value);
 render();
 </script>
